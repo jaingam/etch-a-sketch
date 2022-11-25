@@ -2,7 +2,9 @@ const DEFAULT_SIZE = 16
 
 const container = document.getElementById('container');
 const size_button = document.getElementById('size-button');
+const clear_button = document.getElementById('clear-button');
 
+let current_size = DEFAULT_SIZE;
 function setGrid(size) {
     container.replaceChildren();
     for (let i = 0; i < size * size; i++) {
@@ -23,7 +25,7 @@ function onClickSizeButton() {
     let size;
     let cond = false
     while (!cond) {
-        size = Number(prompt('Enter the new grid size.', 16))
+        current_size = size = Number(prompt('Enter the new grid size.', 16))
         if (size == null) {
             alert('Canceled')
         } else if (size > 100 || size < 1 || isNaN(size)) {
@@ -31,9 +33,17 @@ function onClickSizeButton() {
         }
         else cond = true;
     }
-    setGrid(size)
+    setGrid(current_size);
+
+}
+
+
+function onClickClearButton() {
+    console.log(current_size)
+    setGrid(current_size);
 
 }
 
 size_button.addEventListener('click', onClickSizeButton);
+clear_button.addEventListener('click', onClickClearButton);
 setGrid(DEFAULT_SIZE);
