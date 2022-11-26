@@ -9,13 +9,13 @@ function setGrid(size) {
     container.replaceChildren();
     for (let i = 0; i < size * size; i++) {
         const child = document.createElement('div');
-        child.style.backgroundColor = 'white';
+        child.style.backgroundColor = '#FCE4EC';
         child.style.height = 100 / size + '%';
         //  child.style.width = 100/size+'%';    
         child.classList.add('square');
         child.style.flex = 100 / size + '%';
         child.addEventListener('mouseenter', e => {
-            e.target.style.backgroundColor = 'black';
+            e.target.style.backgroundColor = '#C51162';
         });
         container.appendChild(child);
     }

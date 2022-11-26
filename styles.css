@@ -1,9 +1,55 @@
-.square {
-
+h1 {
+    text-align: center;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    color: #880E4F;
 }
+body {
+    background-color: #F8BBD0;
+    display: grid;
+    justify-content: center;
+}
+
+#outer-box {
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 2em #E91E63; /*https://css-tricks.com/the-backgound-clip-property-and-use-cases/*/
+    padding: 2em 1.5em;
+    border-radius: 8px;
+    
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
     height: 60vh;
     width: 60vh;
+    cursor: url(https://cdn-icons-png.flaticon.com/512/2997/2997896.png), auto;
+    
+}
+
+#buttons {
+    display: flex;
+    background-color: #F48FB1;
+}
+#clear-button {
+    margin-left: auto;
+}
+
+button {
+    border: none;
+    font-size: 12px;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    padding: 12px 16px;
+    background-color: #F48FB1;
+}
+button:hover {
+    border: none;
+    background-color: #F06292;
+}
+
+button:active {
+    border: none;
+    background-color: #F06292;
 }
