@@ -1,10 +1,14 @@
 const DEFAULT_SIZE = 16
+const DEFAULT_COLOR = '#C51162'
 
 const container = document.getElementById('container');
 const size_button = document.getElementById('size-button');
 const clear_button = document.getElementById('clear-button');
+const colorpicker = document.getElementById('colorpicker')
+const colorpicker_label = document.getElementById('colorpicker-label')
 
 let current_size = DEFAULT_SIZE;
+let current_color = DEFAULT_COLOR
 function setGrid(size) {
     container.replaceChildren();
     for (let i = 0; i < size * size; i++) {
@@ -15,7 +19,7 @@ function setGrid(size) {
         child.classList.add('square');
         child.style.flex = 100 / size + '%';
         child.addEventListener('mouseenter', e => {
-            e.target.style.backgroundColor = '#C51162';
+            e.target.style.backgroundColor = current_color;
         });
         container.appendChild(child);
     }
@@ -39,11 +43,27 @@ function onClickSizeButton() {
 
 
 function onClickClearButton() {
-    console.log(current_size)
     setGrid(current_size);
 
 }
 
+function onSelectColor(event) {
+    current_color = event.target.value;
+ //   colorpicker_label.style.backgroundColor='#F06292';
+}
+
+function onClickColorPicker() {    
+}
+
+function onCloseColorPicker(event) {    
+    current_color = event.target.value
+}
+
 size_button.addEventListener('click', onClickSizeButton);
-clear_button.addEventListener('click', onClickClearButton);
+clear_button.addEventListener('click', onClickClearButton)
+colorpicker.value = DEFAULT_COLOR;
+colorpicker.addEventListener('click', onClickColorPicker);
+colorpicker.addEventListener('input', onSelectColor);
+colorpicker.addEventListener('change', onCloseColorPicker);
+colorpicker.select();
 setGrid(DEFAULT_SIZE);

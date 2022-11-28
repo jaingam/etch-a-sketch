@@ -1,35 +1,50 @@
 h1 {
     text-align: center;
     font-family: "Open Sans", Helvetica, sans-serif;
-    color: #880E4F;
+    color: #880e48;
+    font-size: calc(20px+5vh);
 }
+
 body {
-    background-color: #F8BBD0;
+    background-color: #FCE4EC;
     display: grid;
     justify-content: center;
 }
 
+
 #outer-box {
     background-clip: content-box;
-    box-shadow: inset 0 0 0 2em #E91E63; /*https://css-tricks.com/the-backgound-clip-property-and-use-cases/*/
-    padding: 2em 1.5em;
-    border-radius: 8px;
-    
+    box-shadow: inset 0vh 1vh 0.5vh 0vh rgb(255 243 245 / 60%),
+        inset 0vh 2vh 3vh 0.2vh rgb(255 243 245 / 35%),
+        inset 0vh -2vh 3vh 0.5vh rgb(10 37 64 / 35%),
+        inset 0vh -1vh 0.5vh 0 rgba(10, 37, 64, 0.35),
+        0vh 1vh 3vh 0.5vh rgb(10 37 64 / 35%),
+        inset 0 0 0 max(30px, 7vh) #EC407A;
+    /*https://css-tricks.com/the-backgound-clip-property-and-use-cases/*/
+    padding: max(30px, 7vh);
+    border-radius: max(30px, 7vh);
+
+}
+
+#for-shadow {
+    box-shadow: 0vh 1vh 1.5vh 0.5vh rgb(255 243 245 / 40%), 
+    0vh -0.5vh 0.8vh 0.7vh rgb(10 37 64 / 50%)
 }
 
 #container {
     display: flex;
     flex-wrap: wrap;
-    height: 60vh;
-    width: 60vh;
+    height: max(200px, 50vh);
+    width: max(200px, 50vh);
     cursor: url(https://cdn-icons-png.flaticon.com/512/2997/2997896.png), auto;
-    
+
 }
 
 #buttons {
     display: flex;
     background-color: #F48FB1;
 }
+
 #clear-button {
     margin-left: auto;
 }
@@ -44,6 +59,39 @@ button {
     padding: 12px 16px;
     background-color: #F48FB1;
 }
+
+#colorize {
+
+    color: white;
+    padding: 12px 16px;
+}
+
+#colorpicker-label {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#colorpicker-label:hover,
+#colorpicker-label:focus {
+
+    background-color: #F06292;
+}
+
+#colorpicker-label:active {
+    background-color: #EC407A;
+}
+
+input {
+    margin: auto 12px;
+    text-align: center;
+    height: 30px;
+    border: none;
+    padding: 0px;
+    background: none;
+}
+
 button:hover {
     border: none;
     background-color: #F06292;

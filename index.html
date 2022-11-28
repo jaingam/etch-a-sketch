@@ -16,22 +16,33 @@
 <body>
     <h1>Etch-A-Sketch</h1>
     <div id="outer-box">
-        <div id="buttons">
-            <button id="size-button">
-                <span class="material-symbols-outlined">
-                    fit_screen
-                </span>
-            </button>
-            <button id="clear-button">
-                <span class="material-symbols-outlined">
-                    delete
-                </span>
-            </button>
+        <div id="for-shadow">
+            <div id="buttons">
+                <button id="size-button">
+                    <span class="material-symbols-outlined">
+                        fit_screen
+                    </span>
+                </button>
+
+                <!--span id="colorize" class="material-symbols-outlined">
+                colorize
+            </span-->
+                <label for="colorpicker" id="colorpicker-label">
+                    <input type="color" id="colorpicker" name="colorpicker" value="#C51162">
+                </label>
+
+                <button id="clear-button">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </button>
+            </div>
+            <div id="container">
+
+            </div>
 
         </div>
-        <div id="container">
 
-        </div>
 
     </div>
 
